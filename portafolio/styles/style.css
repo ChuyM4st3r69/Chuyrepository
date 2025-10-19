@@ -1,0 +1,249 @@
+/* =========================
+   CONFIGURACIÓN GLOBAL
+========================= */
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  overflow-x: hidden; /* 🔥 Evita desplazamiento lateral */
+  font-family: "Inter", sans-serif;
+  background-color: #fff;
+  color: #000;
+  box-sizing: border-box;
+}
+
+*, *::before, *::after {
+  box-sizing: inherit;
+}
+
+/* =========================
+   CONTENEDOR PRINCIPAL
+========================= */
+.frame {
+  width: 100%;
+  max-width: 1920px; /* Tamaño base del diseño original */
+  margin: 0 auto;
+  position: relative;
+  overflow: hidden;
+  transform-origin: top left;
+}
+
+/* =========================
+   ESCALA RESPONSIVA
+========================= */
+@media (max-width: 1920px) {
+  .frame {
+    transform: scale(calc(100vw / 1920)); /* Escala proporcional al ancho de pantalla */
+    height: calc(100vh / (100vw / 1920));
+  }
+}
+
+/* =========================
+   ELEMENTOS BASE
+========================= */
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+.rectangle,
+.rectangle-2,
+.rectangle-3,
+.rectangle-4,
+.rectangle-5,
+.rectangle-6,
+.rectangle-7,
+.rectangle-8,
+.rectangle-9,
+.rectangle-10,
+.rectangle-11,
+.rectangle-12,
+.rectangle-13,
+.rectangle-14,
+.rectangle-15,
+.rectangle-16,
+.rectangle-17,
+.rectangle-18,
+.rectangle-19,
+.rectangle-20,
+.rectangle-21,
+.rectangle-22,
+.rectangle-23,
+.rectangle-24,
+.rectangle-25,
+.rectangle-26,
+.rectangle-27,
+.rectangle-28,
+.rectangle-29,
+.rectangle-30,
+.rectangle-31,
+.rectangle-32,
+.rectangle-33,
+.rectangle-34 {
+  position: absolute;
+  border-radius: 10px;
+}
+
+/* =========================
+   TEXTOS Y ENCABEZADOS
+========================= */
+.text-wrapper,
+.text-wrapper-2,
+.text-wrapper-3,
+.text-wrapper-4,
+.text-wrapper-5,
+.text-wrapper-6,
+.text-wrapper-7,
+.text-wrapper-8,
+.text-wrapper-9,
+.text-wrapper-10,
+.text-wrapper-11,
+.text-wrapper-12,
+.text-wrapper-13,
+.text-wrapper-14,
+.text-wrapper-15,
+.text-wrapper-16,
+.text-wrapper-17,
+.text-wrapper-18,
+.text-wrapper-19,
+.text-wrapper-20,
+.text-wrapper-21,
+.text-wrapper-22,
+.text-wrapper-23,
+.text-wrapper-24,
+.text-wrapper-25,
+.text-wrapper-26,
+.text-wrapper-27,
+.text-wrapper-28,
+.text-wrapper-29,
+.text-wrapper-30,
+.text-wrapper-31,
+.text-wrapper-32,
+.text-wrapper-33,
+.text-wrapper-34,
+.text-wrapper-35,
+.text-wrapper-36,
+.text-wrapper-37,
+.text-wrapper-38,
+.text-wrapper-39,
+.text-wrapper-40,
+.text-wrapper-41,
+.text-wrapper-42,
+.text-wrapper-43,
+.text-wrapper-44,
+.text-wrapper-45,
+.text-wrapper-46,
+.text-wrapper-47,
+.text-wrapper-48,
+.text-wrapper-49,
+.text-wrapper-50,
+.text-wrapper-51,
+.text-wrapper-52,
+.text-wrapper-53,
+.text-wrapper-54,
+.text-wrapper-55,
+.text-wrapper-56,
+.text-wrapper-57,
+.text-wrapper-58,
+.text-wrapper-59,
+.text-wrapper-60,
+.text-wrapper-61,
+.text-wrapper-62,
+.text-wrapper-63 {
+  position: absolute;
+  white-space: pre-wrap;
+  color: #222;
+  line-height: 1.4;
+}
+
+/* =========================
+   NAVBAR SIMPLE (Inicio / Acerca / etc.)
+========================= */
+.inicio-acerca-de {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 1.1rem;
+  font-weight: 600;
+  display: flex;
+  gap: 2rem;
+  color: #000;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* =========================
+   TEXTOS PRINCIPALES
+========================= */
+.text-wrapper-3 {
+  font-size: clamp(1.5rem, 2.5vw, 2.8rem);
+  font-weight: 700;
+  text-align: center;
+  width: 100%;
+}
+
+.soy-un-ingeniero-en {
+  position: absolute;
+  width: 80%;
+  left: 10%;
+  text-align: center;
+  font-size: clamp(1rem, 1.5vw, 1.3rem);
+  color: #333;
+  line-height: 1.6;
+}
+
+/* =========================
+   BOTONES PRINCIPALES
+========================= */
+.div-wrapper,
+.div-wrapper-2 {
+  position: absolute;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+  background: linear-gradient(90deg, #0066ff, #0099ff);
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem 2rem;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.div-wrapper:hover,
+.div-wrapper-2:hover {
+  transform: scale(1.05);
+}
+
+/* =========================
+   PIE DE PÁGINA
+========================= */
+.text-wrapper-38 {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  padding: 1rem 0;
+  background-color: #222;
+  color: white;
+  font-size: 0.9rem;
+}
+
+/* =========================
+   AJUSTES GENERALES
+========================= */
+@media (max-width: 768px) {
+  .inicio-acerca-de {
+    font-size: 0.9rem;
+    gap: 1rem;
+  }
+  .soy-un-ingeniero-en {
+    font-size: 1rem;
+    width: 90%;
+    left: 5%;
+  }
+}
+
+

@@ -1,0 +1,1360 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jesús Antonio Castillo - Portafolio</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;700&family=Inter:wght@400;600;700;800&display=swap"
+        rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Golos Text', -apple-system, Roboto, Helvetica, sans-serif;
+            background-color: #fff;
+            color: #000;
+            line-height: 1.6;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background-color: #fff;
+            z-index: 50;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            height: 87px;
+        }
+
+        .header-container {
+            max-width: 1920px;
+            margin: 0 auto;
+            padding: 0 20px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            width: 81px;
+            height: 79px;
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        nav {
+            display: flex;
+            gap: 32px;
+            align-items: center;
+            color: #23468C;
+            font-size: 15px;
+        }
+
+        nav button {
+            background: none;
+            border: none;
+            color: #23468C;
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 15px;
+            transition: color 0.3s ease;
+        }
+
+        nav button:hover {
+            color: #2563EB;
+        }
+
+        .language-selector {
+            display: flex;
+            gap: 12px;
+            font-size: 15px;
+        }
+
+        .lang-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #666;
+            font-family: inherit;
+            transition: color 0.3s ease;
+            padding: 4px 8px;
+        }
+
+        .lang-btn.active {
+            background-color: #4A86E8;
+            color: white;
+            border-radius: 4px;
+        }
+
+        .hero {
+            position: relative;
+            min-height: 110vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            padding-top: 87px;
+            margin-top: -87px;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            z-index: -2;
+            background-image: url(images/fondo.png);
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            z-index: -1;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .hero-content {
+            max-width: 1560px;
+            margin: 0 auto;
+            padding: 80px 20px;
+            text-align: center;
+            z-index: 10;
+            color: white;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(2rem, 8vw, 64px);
+            font-weight: 400;
+            color: #BFDBFE;
+            margin-bottom: 16px;
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 10vw, 64px);
+            font-weight: 700;
+            margin-bottom: 24px;
+            line-height: 1.2;
+        }
+
+        .hero-contact-label {
+            font-size: clamp(1.5rem, 5vw, 40px);
+            font-weight: 500;
+            color: #DBEAFE;
+            margin-bottom: 16px;
+        }
+
+        .hero-tagline {
+            font-size: clamp(1rem, 3vw, 24px);
+            font-weight: 500;
+            color: #75B3DE;
+            margin-bottom: 32px;
+        }
+
+        .hero-description {
+            font-size: clamp(1.2rem, 4vw, 32px);
+            font-weight: 500;
+            max-width: 1560px;
+            margin: 0 auto 48px;
+            line-height: 1.6;
+            color: white;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        @media (min-width: 640px) {
+            .hero-buttons {
+                flex-direction: row;
+            }
+        }
+
+        .btn-primary {
+            background-color: #2A67C5;
+            color: white;
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: clamp(1.2rem, 2vw, 24px);
+            padding: 24px 48px;
+            border-radius: 52px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-primary:hover {
+            background-color: #1e4f99;
+        }
+
+        .btn-secondary {
+            border: 4px solid white;
+            color: white;
+            background-color: transparent;
+            font-family: 'Inter', sans-serif;
+            font-weight: 700;
+            font-size: clamp(1.2rem, 2vw, 24px);
+            padding: 24px 48px;
+            border-radius: 52px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-secondary:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .knowledge-section {
+            background-color: #F7F8F9;
+            padding: 80px 20px;
+        }
+
+        .section-container {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: clamp(2rem, 6vw, 48px);
+            font-weight: 500;
+            text-align: center;
+            margin-bottom: 16px;
+            color: #000;
+        }
+
+        .section-subtitle {
+            font-size: clamp(1rem, 2vw, 20px);
+            color: #666;
+            text-align: center;
+            margin-bottom: 64px;
+        }
+
+        .knowledge-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 48px;
+            align-items: center;
+            margin-bottom: 64px;
+        }
+
+        @media (min-width: 1024px) {
+            .knowledge-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .knowledge-photo {
+            text-align: center;
+        }
+
+        .knowledge-photo img {
+            max-width: 100%;
+            width: 100%;
+            max-width: 499px;
+            border-radius: 20px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        }
+
+        .knowledge-content {
+            padding: 0 20px;
+        }
+
+        .knowledge-text {
+            font-size: clamp(1.2rem, 2vw, 24px);
+            color: #000;
+            line-height: 1.8;
+            margin-bottom: 48px;
+        }
+
+        .skills-title {
+            font-size: clamp(1.5rem, 3vw, 24px);
+            font-weight: 500;
+            color: #000;
+            margin-bottom: 32px;
+            text-align: center;
+        }
+
+        @media (min-width: 1024px) {
+            .skills-title {
+                text-align: left;
+            }
+        }
+
+        .skill-item {
+            margin-bottom: 24px;
+        }
+
+        .skill-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 8px;
+        }
+
+        .skill-name {
+            font-size: clamp(1.2rem, 2vw, 24px);
+            color: #374151;
+        }
+
+        .skill-percentage {
+            font-size: 14px;
+            color: #7E7E7E;
+        }
+
+        .skill-bar {
+            width: 100%;
+            height: 15px;
+            background-color: #E5E7EB;
+            border-radius: 7px;
+            overflow: hidden;
+        }
+
+        .skill-bar-fill {
+            height: 100%;
+            background-color: #2563EB;
+            border-radius: 7px;
+            transition: width 0.5s ease;
+        }
+
+        /* Education & Experience Section */
+        .education-section {
+            background-color: white;
+            padding: 80px 20px;
+        }
+
+        .education-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 48px;
+        }
+
+        @media (min-width: 768px) {
+            .education-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .education-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            padding: 32px;
+        }
+
+        .education-title {
+            font-size: clamp(1.5rem, 3vw, 36px);
+            font-weight: 500;
+            color: #000;
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .card-header {
+            display: flex;
+            gap: 24px;
+            align-items: flex-start;
+        }
+
+        .card-logo {
+            width: 59px;
+            height: 73px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card-logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        .card-content h3 {
+            font-size: clamp(1.2rem, 2vw, 24px);
+            font-weight: 700;
+            color: #23468C;
+            margin-bottom: 12px;
+        }
+
+        .card-content p {
+            margin-bottom: 6px;
+            font-size: 16px;
+        }
+
+        .card-position {
+            color: #4A86E8;
+        }
+
+        .card-date {
+            color: #7E7E7E;
+        }
+
+        .card-description {
+            color: #2F2F2F;
+        }
+
+        /* Projects Section */
+        .projects-section {
+            background-color: #F7F8F9;
+            padding: 80px 20px;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 48px;
+        }
+
+        @media (min-width: 768px) {
+            .projects-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .project-card {
+            background-color: white;
+            border-radius: 27px;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-image {
+            width: 100%;
+            height: 164px;
+            object-fit: cover;
+        }
+
+        .project-content {
+            padding: 32px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-title {
+            font-size: clamp(1.5rem, 2vw, 24px);
+            font-weight: 500;
+            color: #23468C;
+            margin-bottom: 12px;
+        }
+
+        .project-description {
+            color: #666;
+            font-size: 15px;
+            margin-bottom: 16px;
+            flex-grow: 1;
+        }
+
+        .tech-label {
+            color: #2F2F2F;
+            font-size: 15px;
+            margin-bottom: 8px;
+        }
+
+        .tech-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 24px;
+        }
+
+        .tech-tag {
+            background-color: #DBEAFE;
+            color: #1E4F99;
+            padding: 8px 16px;
+            border-radius: 16px;
+            font-size: 15px;
+            font-weight: 500;
+        }
+
+        .project-actions {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .btn-project {
+            flex: 1;
+            background-color: #2563EB;
+            color: white;
+            border: none;
+            padding: 12px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 20px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: background-color 0.3s ease;
+            font-family: inherit;
+        }
+
+        .btn-project-button {
+            flex: 1;
+            background-color: #2563EB;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 20px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            transition: background-color 0.3s ease;
+            font-family: inherit;
+        }
+
+        .btn-project:hover {
+            background-color: #1e4f99;
+        }
+
+        .div-icon {
+            width: 48px;
+            height: 48px;
+            border: 1px solid #A8A8A8;
+            border-radius: 8px;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-icon {
+            width: 48px;
+            height: 48px;
+            border: 1px solid #A8A8A8;
+            border-radius: 8px;
+            background-color: white;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn-icon:hover {
+            background-color: #f3f4f6;
+        }
+
+        .btn-icon img {
+            width: 24px;
+            height: 24px;
+        }
+
+        .certificates-section {
+            background-color: white;
+            padding: 80px 20px;
+        }
+
+        .certificates-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 32px;
+            max-width: 512px;
+            margin: 0 auto;
+        }
+
+        @media (min-width: 640px) {
+            .certificates-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .certificate-card {
+            background-color: white;
+            border-radius: 27px;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+            padding: 32px;
+            text-align: center;
+        }
+
+        .certificate-image {
+            width: 166px;
+            height: 166px;
+            margin: 0 auto 24px;
+            object-fit: contain;
+        }
+
+        .certificate-title {
+            font-size: clamp(1.2rem, 2vw, 24px);
+            font-weight: 500;
+            color: #23468C;
+            margin-bottom: 16px;
+        }
+
+        .certificate-info {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+
+        .certificate-issuer {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            color: #666;
+            font-size: 15px;
+        }
+
+        .certificate-issuer img {
+            width: 32px;
+            height: 32px;
+        }
+
+        .certificate-date {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            color: #666;
+            font-size: 15px;
+        }
+
+        .certificate-date img {
+            width: 20px;
+            height: 20px;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(283deg, rgba(22, 47, 98, 0) -43.55%, #23468C 24.4%), #D9D9D9;
+            color: white;
+            padding: 64px 20px;
+            position: relative;
+        }
+
+        .footer-container {
+            max-width: 1280px;
+            margin: 0 auto;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 48px;
+            margin-bottom: 48px;
+        }
+
+        @media (min-width: 768px) {
+            .footer-grid {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+        }
+
+        .footer-column h3 {
+            font-size: clamp(1.8rem, 4vw, 40px);
+            font-weight: 500;
+            color: #4A86E8;
+            margin-bottom: 16px;
+        }
+
+        .footer-column p {
+            font-size: clamp(1rem, 2vw, 20px);
+            font-weight: 500;
+        }
+
+        .footer-links {
+            list-style: none;
+        }
+
+        .footer-links li {
+            margin-bottom: 12px;
+        }
+
+        .footer-links button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: clamp(1rem, 2vw, 20px);
+            font-weight: 500;
+            cursor: pointer;
+            font-family: inherit;
+            transition: color 0.3s ease;
+        }
+
+        .footer-links button:hover {
+            color: #4A86E8;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .contact-item svg {
+            width: 32px;
+            height: 32px;
+            flex-shrink: 0;
+        }
+
+        .contact-text {
+            font-size: clamp(1rem, 2vw, 20px);
+            font-weight: 500;
+        }
+
+        .social-links {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 32px;
+        }
+
+        .social-btn {
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            background-color: #27426B;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .social-btn:hover {
+            background-color: #4A86E8;
+        }
+
+        .social-btn svg,
+        .social-btn img {
+            width: 32px;
+            height: 32px;
+        }
+
+        .footer-divider {
+            border-top: 1px solid #3D6CB3;
+            padding-top: 32px;
+            text-align: center;
+            font-size: clamp(1rem, 2vw, 20px);
+            font-weight: 500;
+        }
+
+        @media (max-width: 768px) {
+            .logo {
+                width: 60px;
+                height: 60px;
+            }
+
+            nav {
+                display: none;
+            }
+
+            .language-selector {
+                display: none;
+            }
+
+            header {
+                height: 70px;
+            }
+
+            .hero {
+                padding-top: 70px;
+                margin-top: -70px;
+            }
+
+            .knowledge-content {
+                padding: 0;
+            }
+        }
+
+        button {
+            transition: all 0.3s ease;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body onload="setLanguage('ES')">
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="images/logo.png" alt="Logo">
+            </div>
+
+            <nav>
+                <button onclick="scrollToSection('inicio')">Inicio</button>
+                <button onclick="scrollToSection('acerca')">Acerca de</button>
+                <button onclick="scrollToSection('proyectos')">Proyectos</button>
+                <button onclick="scrollToSection('certificados')">Certificados</button>
+                <button onclick="scrollToSection('contacto')">Contacto</button>
+            </nav>
+
+            <div class="language-selector">
+                <button class="lang-btn active" onclick="setLanguage('ES')">ES</button>
+                <button class="lang-btn" onclick="setLanguage('EN')">EN</button>
+                <button class="lang-btn" onclick="setLanguage('FR')">FR</button>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero" id="inicio">
+        <div class="hero-content">
+            <h2 class="hero-subtitle" data-text-id="hola">Hola, soy</h2>
+            <h1 class="hero-title">Jesús Antonio Castillo</h1>
+
+            <p class="hero-contact-label" data-text-id="contactoLabel">Contacto</p>
+            <p class="hero-tagline" data-text-id="hablemosProyecto">Hablemos sobre tu próximo proyecto</p>
+
+            <p class="hero-description" data-text-id="descriptionHero">
+                Soy un ingeniero en tecnologías de la información graduado de la Universidad Politécnica de Sinaloa,
+                con experiencia en desarrollo de software, análisis de sistemas y gestión de proyectos tecnológicos.
+            </p>
+
+            <div class="hero-buttons">
+                <button class="btn-primary" data-text-id="descargarCV">Descargar CV</button>
+                <button class="btn-secondary" data-text-id="contactame">Contáctame</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="knowledge-section" id="acerca">
+        <div class="section-container">
+            <h2 class="section-title" data-text-id="conocimientos">Conocimientos</h2>
+            <p class="section-subtitle" data-text-id="hablemosProyecto">Hablemos sobre tu próximo proyecto</p>
+
+            <div class="knowledge-grid">
+                <div class="knowledge-photo">
+                    <img src="images/fotoformal.png" alt="Jesús Antonio Castillo">
+                </div>
+
+                <div class="knowledge-content">
+                    <p class="knowledge-text" data-text-id="descriptionHeroAbout">
+                        Soy un ingeniero en tecnologías de la información graduado de la Universidad Politécnica de
+                        Sinaloa,
+                        con experiencia en desarrollo de software, análisis de sistemas y gestión de proyectos
+                        tecnológicos.
+                    </p>
+
+                    <h3 class="skills-title" data-text-id="habilidadesTecnicas">Habilidades Técnicas</h3>
+
+                    <div>
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">JavaScript</span>
+                                <span class="skill-percentage">75%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-bar-fill" style="width: 75%"></div>
+                            </div>
+                        </div>
+
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">React</span>
+                                <span class="skill-percentage">50%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-bar-fill" style="width: 50%"></div>
+                            </div>
+                        </div>
+
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">Python</span>
+                                <span class="skill-percentage">80%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-bar-fill" style="width: 80%"></div>
+                            </div>
+                        </div>
+
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">Java</span>
+                                <span class="skill-percentage">90%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-bar-fill" style="width: 90%"></div>
+                            </div>
+                        </div>
+
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">SQL</span>
+                                <span class="skill-percentage">85%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-bar-fill" style="width: 85%"></div>
+                            </div>
+                        </div>
+
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name">C++</span>
+                                <span class="skill-percentage">95%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-bar-fill" style="width: 95%"></div>
+                            </div>
+                        </div>
+
+                        <div class="skill-item">
+                            <div class="skill-header">
+                                <span class="skill-name" data-text-id="htmlCss">HTML y CSS</span>
+                                <span class="skill-percentage">95%</span>
+                            </div>
+                            <div class="skill-bar">
+                                <div class="skill-bar-fill" style="width: 95%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="education-section">
+        <div class="section-container">
+            <div class="education-grid">
+                <div>
+                    <h2 class="education-title" data-text-id="educacion">Educación</h2>
+                    <div class="education-card">
+                        <div class="card-header">
+                            <div class="card-logo">
+                                <img src="images/logoupsin.png" alt="UPSIN Logo">
+                            </div>
+                            <div class="card-content">
+                                <h3>Universidad Politécnica de Sinaloa</h3>
+                                <p class="card-position" data-text-id="puestoEducacion">Ing. Tecnologías de la
+                                    Información</p>
+                                <p class="card-date">2023-2026</p>
+                                <p class="card-description" data-text-id="descEducacion">Especialización en desarrollo
+                                    de software y sistema de información</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h2 class="education-title" data-text-id="experiencia">Experiencia</h2>
+                    <div class="education-card">
+                        <div class="card-header">
+                            <div class="card-logo">
+                                <img src="images/logovolks.png" alt="Popul-Auto Logo">
+                            </div>
+                            <div class="card-content">
+                                <h3>Agencia Popul-Auto</h3>
+                                <p class="card-position" data-text-id="puestoExperiencia">Especialista en Redes</p>
+                                <p class="card-date">Noviembre 2024 - Diciembre 2024</p>
+                                <p class="card-description" data-text-id="descExperiencia">Gestión y mantenimiento de
+                                    la infraestructura de red corporativa</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="projects-section" id="proyectos">
+        <div class="section-container">
+            <h2 class="section-title" style="color: #23468C;" data-text-id="proyectosTitulo">Proyectos</h2>
+            <p class="section-subtitle" data-text-id="hablemosProyecto">Hablemos sobre tu próximo proyecto</p>
+
+            <div class="projects-grid">
+                <div class="project-card">
+                    <img src="images/farmacode3.png" alt="FarmaCode" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">FarmaCode</h3>
+                        <p class="project-description" data-text-id="descFarmaCode">
+                            Aplicación completa para la gestión de usuarios, compras, ventas y proveedores en
+                            farmacias.
+                        </p>
+
+                        <p class="tech-label" data-text-id="tecnologias">Tecnologías:</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Java</span>
+                            <span class="tech-tag">SQL</span>
+                            <span class="tech-tag">Docker</span>
+                            <span class="tech-tag">TypeScript</span>
+                        </div>
+
+                        <div class="project-actions">
+                            <a href="https://www.figma.com/design/kKj13GrPX3v2gLKndEcdAR/OptiRuta" class="btn-project"
+                                target="_blank" rel="noopener noreferrer">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path
+                                        d="M10 6H6C4.89543 6 4 6.89543 4 8V18C4 19.1046 4.89543 20 6 20H16C17.1046 20 18 19.1046 18 18V14M14 4H20M20 4V10M20 4L10 14" />
+                                </svg>
+                                <span data-text-id="verProyecto">Ver Proyecto</span>
+                            </a>
+                            <div class="div-icon">
+                                <img src="images/githublogonegro.png" alt="GitHub">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="images/optiruta.png" alt="OptiRuta" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">OptiRuta</h3>
+                        <p class="project-description" data-text-id="descOptiRuta">
+                            Aplicación móvil para la gestión de transporte publico y para estudiantes.
+                        </p>
+
+                        <p class="tech-label" data-text-id="tecnologias">Tecnologías:</p>
+                        <div class="tech-tags">
+                            <span class="tech-tag">Figma</span>
+                        </div>
+
+                        <div class="project-actions">
+
+                            <a href="https://www.figma.com/design/kKj13GrPX3v2gLKndEcdAR/OptiRuta" class="btn-project"
+                                target="_blank" rel="noopener noreferrer">
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2">
+                                    <path
+                                        d="M10 6H6C4.89543 6 4 6.89543 4 8V18C4 19.1046 4.89543 20 6 20H16C17.1046 20 18 19.1046 18 18V14M14 4H20M20 4V10M20 4L10 14" />
+                                </svg>
+                                <span data-text-id="verProyecto">Ver Proyecto</span>
+                            </a>
+                            <div class="div-icon">
+                                <img src="images/logofigma.png" alt="External Link">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="certificates-section" id="certificados">
+        <div class="section-container">
+            <h2 class="section-title" style="color: #23468C;" data-text-id="certificadosTitulo">Certificados</h2>
+            <p class="section-subtitle" data-text-id="hablemosProyecto">Hablemos sobre tu próximo proyecto</p>
+
+            <div class="certificates-grid">
+                <div class="certificate-card">
+                    <img src="images/certificadoit.png" alt="IT Essentials" class="certificate-image">
+                    <h3 class="certificate-title" data-text-id="certIT">IT Essentials</h3>
+                    <div class="certificate-info">
+                        <div class="certificate-issuer">
+                            <img src="images/logoempresa.png" alt="Office">
+                            <span data-text-id="emisorIT">Emisor: <strong>Cisco</strong></span>
+                        </div>
+                        <div class="certificate-date">
+                            <img src="images/logofecha.png" alt="Date">
+                            <span data-text-id="fechaIT">Fecha: <strong>2024</strong></span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="certificate-card">
+                    <img src="images/certificadoredes.png" alt="CCNA" class="certificate-image">
+                    <h3 class="certificate-title" data-text-id="certCCNA">CCNA: Introduction to Networks</h3>
+                    <div class="certificate-info">
+                        <div class="certificate-issuer">
+                            <img src="images/logoempresa.png" alt="Office">
+                            <span data-text-id="emisorCCNA">Emisor: <strong>Cisco</strong></span>
+                        </div>
+                        <div class="certificate-date">
+                            <img src="images/logofecha.png" alt="Date">
+                            <span data-text-id="fechaCCNA">Fecha: <strong>2024</strong></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contacto">
+        <div class="footer-container">
+            <div class="footer-grid">
+                <div class="footer-column">
+                    <h3 data-text-id="portafolioFooter">Portafolio</h3>
+                    <p data-text-id="descripcionFooter">Portafolio de Jesús Antonio Hdez Castillo</p>
+                </div>
+
+                <div class="footer-column">
+                    <h3 data-text-id="enlacesRapidos">Enlaces Rápidos</h3>
+                    <ul class="footer-links">
+                        <li><button onclick="scrollToSection('inicio')" data-text-id="inicio">Inicio</button></li>
+                        <li><button onclick="scrollToSection('acerca')" data-text-id="acercaDe">Acerca de</button></li>
+                        <li><button onclick="scrollToSection('proyectos')" data-text-id="proyectos">Proyectos</button>
+                        </li>
+                        <li><button onclick="scrollToSection('certificados')"
+                                data-text-id="certificados">Certificados</button></li>
+                    </ul>
+                </div>
+
+                <div class="footer-column">
+                    <h3 data-text-id="contacto">Contacto</h3>
+                    <div class="contact-item">
+                        <img src="images/logoubicacion.png" alt="">
+                        <span class="contact-text" data-text-id="direccion">C. Amapa #63, Mazatlán, Sinaloa</span>
+                    </div>
+                    <div class="contact-item">
+                        <img src="images/llamar.png" alt="">
+                        <span class="contact-text" data-text-id="telefono">Tel: (669) 932 8266</span>
+                    </div>
+                    <div class="contact-item">
+                        <img src="images/email.png" alt="GitHub">
+                        <span class="contact-text" data-text-id="email">Email: jesus200546656@gmail.com</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="social-links">
+                <a class="social-btn" href="https://github.com/ChuyM4st3r69/Chuyrepository">
+                    <img src="images/logogithubblanco.png" alt="GitHub">
+                </a>
+                <a class="social-btn" href="https://www.linkedin.com/in/jesus-antonio-4061b438a">
+                    <img src="images/logolinkedin.png" alt="LinkedIn">
+                </a>
+            </div>
+
+            <div class="footer-divider" data-text-id="derechosReservados">
+                © 2025 Castillo - Todos los derechos reservados
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function scrollToSection(id) {
+            const element = document.getElementById(id);
+            if (element) {
+                element.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        const translations = {
+            ES: {
+                inicio: "Inicio",
+                acercaDe: "Acerca de",
+                proyectos: "Proyectos",
+                certificados: "Certificados",
+                contacto: "Contacto",
+                conocimientos: "Conocimientos",
+                proyectosTitulo: "Proyectos",
+                certificadosTitulo: "Certificados",
+                hablemosProyecto: "Hablemos sobre tu próximo proyecto",
+
+                hola: "Hola, soy",
+                contactoLabel: "Contacto",
+                descriptionHero: "Soy un ingeniero en tecnologías de la información graduado de la Universidad Politécnica de Sinaloa, con experiencia en desarrollo de software, análisis de sistemas y gestión de proyectos tecnológicos.",
+                descargarCV: "Descargar CV",
+                contactame: "Contáctame",
+
+                descriptionHeroAbout: "Soy un ingeniero en tecnologías de la información graduado de la Universidad Politécnica de Sinaloa, con experiencia en desarrollo de software, análisis de sistemas y gestión de proyectos tecnológicos.",
+                habilidadesTecnicas: "Habilidades Técnicas",
+                htmlCss: "HTML y CSS",
+
+                educacion: "Educación",
+                experiencia: "Experiencia",
+                puestoEducacion: "Ing. Tecnologías de la Información",
+                descEducacion: "Especialización en desarrollo de software y sistema de información",
+                puestoExperiencia: "Especialista en Redes",
+                descExperiencia: "Gestión y mantenimiento de la infraestructura de red corporativa",
+
+                tecnologias: "Tecnologías:",
+                verProyecto: "Ver Proyecto",
+                descFarmaCode: "Aplicación completa para la gestión de usuarios, compras, ventas y proveedores en farmacias.",
+                descOptiRuta: "Aplicación móvil para la gestión de transporte publico y para estudiantes.",
+
+                certIT: "IT Essentials",
+                emisorIT: "Emisor: <strong>Cisco</strong>",
+                fechaIT: "Fecha: <strong>2024</strong>",
+                certCCNA: "CCNA: Introduction to Networks",
+                emisorCCNA: "Emisor: <strong>Cisco</strong>",
+                fechaCCNA: "Fecha: <strong>2024</strong>",
+
+                portafolioFooter: "Portafolio",
+                descripcionFooter: "Portafolio de Jesús Antonio Hdez Castillo",
+                enlacesRapidos: "Enlaces Rápidos",
+                direccion: "C. Amapa #63, Mazatlán, Sinaloa",
+                telefono: "Tel: (669) 932 8266",
+                email: "Email: jesus200546656@gmail.com",
+                derechosReservados: "© 2025 Castillo - Todos los derechos reservados"
+            },
+            EN: {
+                inicio: "Home",
+                acercaDe: "About",
+                proyectos: "Projects",
+                certificados: "Certificates",
+                contacto: "Contact",
+                conocimientos: "Knowledge",
+                proyectosTitulo: "Projects",
+                certificadosTitulo: "Certificates",
+                hablemosProyecto: "Let's talk about your next project",
+
+                hola: "Hello, I am",
+                contactoLabel: "Contact",
+                descriptionHero: "I am an Information Technology Engineer graduated from the Polytechnic University of Sinaloa, with experience in software development, systems analysis, and technology project management.",
+                descargarCV: "Download CV",
+                contactame: "Contact Me",
+
+                descriptionHeroAbout: "I am an Information Technology Engineer graduated from the Polytechnic University of Sinaloa, with experience in software development, systems analysis, and technology project management.",
+                habilidadesTecnicas: "Technical Skills",
+                htmlCss: "HTML and CSS",
+
+                educacion: "Education",
+                experiencia: "Experience",
+                puestoEducacion: "Information Technology Engineer",
+                descEducacion: "Specialization in software development and information systems",
+                puestoExperiencia: "Network Specialist",
+                descExperiencia: "Management and maintenance of the corporate network infrastructure",
+
+                tecnologias: "Technologies:",
+                verProyecto: "View Project",
+                descFarmaCode: "Complete application for managing users, purchases, sales, and suppliers in pharmacies.",
+                descOptiRuta: "Mobile application for managing public and student transport.",
+
+                certIT: "IT Essentials",
+                emisorIT: "Issuer: <strong>Cisco</strong>",
+                fechaIT: "Date: <strong>2024</strong>",
+                certCCNA: "CCNA: Introduction to Networks",
+                emisorCCNA: "Issuer: <strong>Cisco</strong>",
+                fechaCCNA: "Date: <strong>2024</strong>",
+
+                portafolioFooter: "Portfolio",
+                descripcionFooter: "Portfolio of Jesús Antonio Hdez Castillo",
+                enlacesRapidos: "Quick Links",
+                direccion: "C. Amapa #63, Mazatlan, Sinaloa",
+                telefono: "Phone: (669) 932 8266",
+                email: "Email: jesus200546656@gmail.com",
+                derechosReservados: "© 2025 Castillo - All rights reserved"
+            },
+            FR: {
+                inicio: "Accueil",
+                acercaDe: "À propos",
+                proyectos: "Projets",
+                certificados: "Certificats",
+                contacto: "Contact",
+                conocimientos: "Connaissances",
+                proyectosTitulo: "Projets",
+                certificadosTitulo: "Certificats",
+                hablemosProyecto: "Parlons de votre prochain projet",
+
+                hola: "Bonjour, je suis",
+                contactoLabel: "Contact",
+                descriptionHero: "Je suis un ingénieur en technologies de l'information diplômé de l'Université Polytechnique de Sinaloa, avec une expérience en développement de logiciels, analyse de systèmes et gestion de projets technologiques.",
+                descargarCV: "Télécharger CV",
+                contactame: "Contactez-moi",
+
+                descriptionHeroAbout: "Je suis un ingénieur en technologies de l'information diplômé de l'Université Polytechnique de Sinaloa, avec une expérience en développement de logiciels, analyse de systèmes et gestion de projets technologiques.",
+                habilidadesTecnicas: "Compétences Techniques",
+                htmlCss: "HTML et CSS",
+
+                educacion: "Éducation",
+                experiencia: "Expérience",
+                puestoEducacion: "Ing. Technologies de l'Information",
+                descEducacion: "Spécialisation en développement de logiciels et systèmes d'information",
+                puestoExperiencia: "Spécialiste Réseaux",
+                descExperiencia: "Gestion et maintenance de l'infrastructure de réseau d'entreprise",
+
+                tecnologias: "Technologies:",
+                verProyecto: "Voir le Projet",
+                descFarmaCode: "Application complète pour la gestion des utilisateurs, des achats, des ventes et des fournisseurs en pharmacie.",
+                descOptiRuta: "Application mobile pour la gestion des transports publics et pour les étudiants.",
+
+                certIT: "IT Essentials",
+                emisorIT: "Émetteur: <strong>Cisco</strong>",
+                fechaIT: "Date: <strong>2024</strong>",
+                certCCNA: "CCNA: Introduction aux réseaux",
+                emisorCCNA: "Émetteur: <strong>Cisco</strong>",
+                fechaCCNA: "Date: <strong>2024</strong>",
+
+                portafolioFooter: "Portefeuille",
+                descripcionFooter: "Portefeuille de Jesús Antonio Hdez Castillo",
+                enlacesRapidos: "Liens Rapides",
+                direccion: "C. Amapa #63, Mazatlán, Sinaloa",
+                telefono: "Tél: (669) 932 8266",
+                email: "Email: jesus200546656@gmail.com",
+                derechosReservados: "© 2025 Castillo - Tous droits réservés"
+            }
+        };
+
+        function setLanguage(lang) {
+            const buttons = document.querySelectorAll('.lang-btn');
+            buttons.forEach(btn => {
+                btn.classList.remove('active');
+                if (btn.textContent === lang) {
+                    btn.classList.add('active');
+                }
+            });
+
+            const texts = translations[lang];
+
+            document.querySelectorAll('nav button').forEach(btn => {
+                if (btn.getAttribute('onclick').includes('inicio')) btn.textContent = texts.inicio;
+                if (btn.getAttribute('onclick').includes('acerca')) btn.textContent = texts.acercaDe;
+                if (btn.getAttribute('onclick').includes('proyectos')) btn.textContent = texts.proyectos;
+                if (btn.getAttribute('onclick').includes('certificados')) btn.textContent = texts.certificados;
+                if (btn.getAttribute('onclick').includes('contacto')) btn.textContent = texts.contacto;
+            });
+            document.querySelectorAll('.footer-links button').forEach(btn => {
+                if (btn.getAttribute('onclick').includes('inicio')) btn.textContent = texts.inicio;
+                if (btn.getAttribute('onclick').includes('acerca')) btn.textContent = texts.acercaDe;
+                if (btn.getAttribute('onclick').includes('proyectos')) btn.textContent = texts.proyectos;
+                if (btn.getAttribute('onclick').includes('certificados')) btn.textContent = texts.certificados;
+            });
+
+            document.querySelectorAll('[data-text-id]').forEach(element => {
+                const textId = element.getAttribute('data-text-id');
+                if (texts[textId]) {
+                    element.innerHTML = texts[textId];
+                }
+            });
+
+            document.querySelector('.knowledge-section .section-title').textContent = texts.conocimientos;
+            document.querySelector('.knowledge-section .section-subtitle').textContent = texts.hablemosProyecto;
+            document.querySelector('.projects-section .section-title').textContent = texts.proyectosTitulo;
+            document.querySelector('.projects-section .section-subtitle').textContent = texts.hablemosProyecto;
+            document.querySelector('.certificates-section .section-title').textContent = texts.certificadosTitulo;
+            document.querySelector('.certificates-section .section-subtitle').textContent = texts.hablemosProyecto;
+            document.querySelector('.skills-title').textContent = texts.habilidadesTecnicas;
+
+            const educationTitles = document.querySelectorAll('.education-title');
+            if (educationTitles.length > 0) educationTitles[0].textContent = texts.educacion;
+            if (educationTitles.length > 1) educationTitles[1].textContent = texts.experiencia;
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            setLanguage('ES');
+        });
+    </script>
+</body>
+
+</html>
